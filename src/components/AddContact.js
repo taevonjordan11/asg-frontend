@@ -9,13 +9,6 @@ class AddContact extends React.Component {
     email: "",
   };
 
-  // myComp = (props) => {
-  //   const location = useLocation();
-
-  //   // location.pathname is '/users/new'
-  //   return <span>Path is: {console.log(location)}</span>;
-  // };
-
   //   Handles the submit function
   submitHandler = (e) => {
     const contacts = this.props.contacts;
