@@ -21,7 +21,7 @@ const Details = (props) => {
     <div className="main">
       <div className="ui card centered">
       <div className="image">
-          <img src='https://www.pngitem.com/pimgs/m/22-220721_circled-user-male-type-user-colorful-icon-png.png' alt="user" />
+          <img src='https://www.pngitem.com/pimgs/m/22-220721_circled-user-male-type-user-colorful-icon-png.png' alt="user image" />
         </div>
         <div className="content">
           <div className="header">{contactDetail.name}</div>
