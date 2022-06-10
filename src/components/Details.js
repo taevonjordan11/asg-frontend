@@ -20,6 +20,9 @@ const Details = (props) => {
   return (
     <div className="main">
       <div className="ui card centered">
+      <div className="image">
+          <img src='https://www.pngitem.com/pimgs/m/22-220721_circled-user-male-type-user-colorful-icon-png.png' alt="user" />
+        </div>
         <div className="content">
           <div className="header">{contactDetail.name}</div>
           <div className="description">{contactDetail.email}</div>

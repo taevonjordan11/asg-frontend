@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "./withRouter";
-import { useLocation } from "react-router-dom";
+import Axios from "axios";
 
 class AddContact extends React.Component {
   // holds the component state
@@ -22,6 +22,24 @@ class AddContact extends React.Component {
     this.props.navigate("/");
 
     console.log(this.state);
+  };
+
+
+  // get request to generate random name
+  getName = () => {
+    Axios.get("https://randomuser.me/api/").then((repsonse) => {
+      const generatedName =
+        repsonse.data.results[0].name.first +
+        " " +
+        repsonse.data.results[0].name.last;
+
+      const generatedEmail =
+        repsonse.data.results[0].name.first.toLowerCase() +
+        repsonse.data.results[0].name.last.toLowerCase() +
+        "@gmail.com";
+
+      this.setState({ name: generatedName, email: generatedEmail });
+    });
   };
 
   render() {
@@ -52,6 +70,9 @@ class AddContact extends React.Component {
           </div>
           <button className="ui button green">Add Contact</button>
         </form>
+        <button className="ui button green" onClick={this.getName} style={{  marginTop: "7px" }}>
+          Genereate Name
+        </button>
       </div>
     );
   }
